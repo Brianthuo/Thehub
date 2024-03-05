@@ -137,7 +137,7 @@
                     .ProductInfoTab{
                         width: 90%;
                         display: flex;
-                        align-items: start;
+                        align-items: flex-start;
                         justify-content: space-between;
                         padding: 15px 10px;
                         
@@ -278,7 +278,7 @@
                 .social-media{
                     display: flex;
                     align-items: center;
-                    justify-content: start;
+                    justify-content: flex-start;
                     gap: 2em;
                     
                     .sIcon{

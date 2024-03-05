@@ -507,7 +507,7 @@
                 .ProductInfoTab{
                     width: 90%;
                     display: flex;
-                    align-items: start;
+                    align-items: flex-start;
                     justify-content: space-between;
                     padding: 15px 10px;
                     
@@ -721,8 +721,8 @@
                 width: 20em;
                 min-height: 8vh;
                 display: flex;
-                align-items: start;
-                justify-content: start;
+                align-items: flex-start;
+                justify-content: flex-start;
                 padding: 10px;
                 border: 1px solid var(--BorderColor);
                 border-radius: 10px;
