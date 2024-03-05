@@ -130,7 +130,7 @@ const handleMaxPriceChange = (e) => {
                     </div>
                 )
                 
-      
+        
             })
             }
 

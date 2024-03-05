@@ -120,8 +120,8 @@ const OffersPage = () => {
                   )
 
                 }
-                
-      
+                  
+                return null; // Ensure a value is always returned
             })
             }
 

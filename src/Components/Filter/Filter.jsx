@@ -2,7 +2,7 @@ import React from 'react'
 import './Filter.scss'
 import { brands } from '../../brands';
 import { Categories } from '../../Categories';
-
+  
 const Filter = ({categoryChange,  ModelChange, minimumPrice, MaximumPrice, searchItem,ValueMaxprice, ValueMinprice, SearchTerm}) => {
 
   return (

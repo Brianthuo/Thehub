@@ -1,14 +1,12 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Navigationbar.scss'
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import { NavLink, useLocation, Link }from 'react-router-dom'
-import { createPortal } from 'react-dom';
-import SearchTab from '../SearchTab/SearchTab';
-import { RiMenu3Fill } from "react-icons/ri";
+import {  useLocation, Link }from 'react-router-dom'
+import { RiMenu3Fill } from "react-icons/ri"; 
 
 const Navigationbar = () => {
-    const [Openned, setOpenned]= useState(false)
+
     const location = useLocation();
     const cart = JSON.parse(localStorage.getItem('cart'));
     const fav = JSON.parse(localStorage.getItem('Favourites'));

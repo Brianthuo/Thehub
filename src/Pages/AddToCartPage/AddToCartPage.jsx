@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
-
+  
 const AddToCartPage = ({Data, RemoveFromCart}) => {
   
  const CartProducts = Data

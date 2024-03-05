@@ -14,7 +14,7 @@ import Navigationbar from '../../Components/Navigationbar/Navigationbar'
 const ViewProductPage = ({AddtoCart}) => {
     const {id}= useParams()
     console.log(id)
-    const product = Data.find(item =>item.id.toString() === id);
+    const product = Data.find(item =>item.id.toString() === id);   
     console.log(product)
 
     const shuffledData = useMemo(() => {

@@ -144,6 +144,7 @@ const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
                 </div>
               )
             }
+            return null;
       
           })
         }
@@ -175,7 +176,7 @@ const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
                       </div>
                     )
                   
-                  return null;
+                 
                 })}
           </div>
         </div>
@@ -184,41 +185,43 @@ const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
         <div className="Products">
       <h1>Weeks's best <span>Offers</span> </h1>
       <div className="Products-bar">
-        {
-          shuffledData.map((Data)=>{
-            if(Data.offer===true){
-              const formattedPrice = Data.ProductPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              // Calculate discounted price (e.g., 10% off)
-              const discountedPrice =Math.round( Data.ProductPrice * 0.8); // 20% off
-              const formattedDiscountedPrice = discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              return(
-                <div className='Products-container' key={Data.id}>
-                   <FaRegHeart className='icon' />
-                   <Link to={`/ViewProduct/${Data.id}`} className='IMAGElink'>
-                  <img src={Data.ProductImage} alt="" />
-                   </Link>
-                  <div className="ProductInfoTab">
-                    <div className="Productinfo">
-                      <h2>{Data.ProductName}</h2>
-                      <p>{Data.model}</p>
-                    </div>
-                    <div className="ProductPrice">
-                      <h2 className='Discount'>KES {formattedPrice}/=</h2>
-                      <h2>KES {formattedDiscountedPrice}/=</h2>
-                    </div>
-                  </div>
-                  <div className="ButtonContainer">
-                  <button className='AddtoCart' type='button' onClick={(e) =>{  e.preventDefault(); AddtoCart(Data.id)}} ><FiPlus /> Add to cart</button>
-                  <Link to={`/ViewProduct/${Data.id}`} className='link'>
-                  <button>View more <IoIosArrowForward /></button>
-                     </Link>
-                  </div>
-                </div>
-              )
-            }
-            return null; // Ensure a value is always returned
-          })
-        }
+      {
+  shuffledData.map((Data) => {
+    if (Data.offer === true) {
+      const formattedPrice = Data.ProductPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      // Calculate discounted price (e.g., 20% off)
+      const discountedPrice = Math.round(Data.ProductPrice * 0.8); // 20% off
+      const formattedDiscountedPrice = discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return (
+        <div className='Products-container' key={Data.id}>
+          <FaRegHeart className='icon' />
+          <Link to={`/ViewProduct/${Data.id}`} className='IMAGElink'>
+            <img src={Data.ProductImage} alt="" />
+          </Link>
+          <div className="ProductInfoTab">
+            <div className="Productinfo">
+              <h2>{Data.ProductName}</h2>
+              <p>{Data.model}</p>
+            </div>
+            <div className="ProductPrice">
+              <h2 className='Discount'>KES {formattedPrice}/=</h2>
+              <h2>KES {formattedDiscountedPrice}/=</h2>
+            </div>
+          </div>
+          <div className="ButtonContainer">
+            <button className='AddtoCart' type='button' onClick={(e) => { e.preventDefault(); AddtoCart(Data.id) }} ><FiPlus /> Add to cart</button>
+            <Link to={`/ViewProduct/${Data.id}`} className='link'>
+              <button>View more <IoIosArrowForward /></button>
+            </Link>
+          </div>
+        </div>
+      );
+    }
+    // Add a return statement here for the cases when Data.offer is false
+    return null;
+  })
+}
+
       </div>
 
     </div>
