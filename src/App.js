@@ -25,7 +25,7 @@ function App() {
     if (Array.isArray(storedData)) {
       setCartItems(storedData);
     }
-  }, [cartItems]);
+  }, [storedData]);
 
 
   

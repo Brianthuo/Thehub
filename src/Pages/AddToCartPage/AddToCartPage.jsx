@@ -1,34 +1,28 @@
-import React, { useState } from 'react'
+import React, {useMemo} from 'react'
 import './AddToCartPage.scss'
-import image from '../../images/Games/PS5.jpg'
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import { NavLink, useLocation, Link }from 'react-router-dom'
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { AiOutlineClose } from "react-icons/ai";
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 
 const AddToCartPage = ({Data, RemoveFromCart}) => {
-  const [CartProducts, setCartProducts]=useState(Data)
-  const location = useLocation();
-  console.log(CartProducts)
-  const calculateTotalPrice = () => {
-    let totalPrice = 0;
-    // Iterate through the CartProducts array
-    CartProducts.forEach(product => {
+  
+ const CartProducts = Data
+
+ const calculateTotalPrice = useMemo(() => {
+  let totalPrice = 0;
+  // Iterate through the CartProducts array
+  CartProducts.forEach(product => {
       totalPrice += product.ProductPrice; // Assuming price is a property of each product
-    });
-    return totalPrice;
-    const formattedTotalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-  console.log(calculateTotalPrice())
+  });
+  return totalPrice;
+}, [CartProducts]); // Remove 'Data' from the dependency array   
   
   return (
     <div className='AddToCartPage'>
-           <Navigationbar/>
+           <Navigationbar/> 
 {/* ProductsContainer */}
 <div className="ProductsContainer">
  <div className="ProductsSubContainer">
@@ -70,7 +64,6 @@ const AddToCartPage = ({Data, RemoveFromCart}) => {
              </div>
          )
          
-         return null; // Ensure a value is always returned
      })
      }
 

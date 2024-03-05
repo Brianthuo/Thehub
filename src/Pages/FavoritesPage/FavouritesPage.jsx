@@ -1,12 +1,8 @@
-import React , {useEffect, useState} from 'react'
+import React from 'react'
 import './FavouritesPage.scss'
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import { Categories } from '../../Categories';
-import { brands } from '../../brands';
 import { FiPlus } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
-import { NavLink, useLocation, Link }from 'react-router-dom'
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
@@ -14,7 +10,6 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 
 const FavouritesPage = ({Data}) => {
-    const location = useLocation();
   return (
     <div className='FavouritesPage'>
    <Navigationbar/>
@@ -59,7 +54,6 @@ const FavouritesPage = ({Data}) => {
              </div>
          )
          
-         return null; // Ensure a value is always returned
      })
      }
 

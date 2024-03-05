@@ -9,7 +9,7 @@ const CheckoutPage = () => {
             <div className="PersonalInfo">
           <h2>Personal Info</h2>
                 
-                <div className="Datainfo">
+                <div className="Datainfo">   
                     <label htmlFor="">Name</label>
                     <input type="text" />
                 </div>

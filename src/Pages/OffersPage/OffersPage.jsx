@@ -17,7 +17,7 @@ import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 import Footer from '../../Components/Footer/Footer';
 import Filter from '../../Components/Filter/Filter';
 
-const OffersPage = () => {
+const OffersPage = () => {  
     const {id}= useParams()
     const [searchItem, setSearchItem] = useState('')
     const [selectedCategory, setSelectedCategory]= useState('')

@@ -2,22 +2,18 @@ import React,{useState, useEffect ,useMemo} from 'react'
 import './Homepage.scss'
 import {Data} from '../../Data'
 import { Categories } from '../../Categories';
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import background from '../../images/Background.png'
 import { FiPlus } from "react-icons/fi";
 import { brands } from '../../brands';
 import { FaArrowRight } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { NavLink, useLocation, Link }from 'react-router-dom'
+
+import { useLocation, Link }from 'react-router-dom'
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 import Footer from '../../Components/Footer/Footer';
 
-
+  
 
 
 const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
