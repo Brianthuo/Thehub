@@ -1,0 +1,252 @@
+@import '../../Breakpoints.scss';
+.Nav{
+    width: 100%;
+    height: 6vh;
+    background-color: var(--BorderColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 100;
+    position: relative;
+
+    @include sm{
+        display: none;
+        justify-content: space-between;
+      }
+      @include md{
+        display: none;
+
+      }
+      @include lg{
+          
+      }
+      @include xl{
+
+      }
+      @include breakpoint(1200px){
+      
+      }
+    
+
+    .Logo{
+        color: var(--primaryColor);
+        cursor: pointer;
+
+        @include sm{
+         margin-left: 5px;
+        }
+        @include md{
+          
+  
+        }
+        @include lg{
+            
+        }
+        @include xl{
+  
+        }
+        @include breakpoint(1200px){
+        
+        }
+        
+    }
+
+    .Ul {
+        width: 40%;
+      
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+      
+          .selected {
+            background-color: var(--BrandColor);
+            border-radius: 12px;
+            color: var(--primaryColor);
+            text-decoration: none;
+      
+            li {
+              color: #f5fefd;
+            }
+          }
+      
+          .Link {
+            text-decoration: none;
+      
+            li {
+              color: var(--primaryColor);
+              font-size: 14px;
+              list-style: none;
+              cursor: pointer;
+              padding: 11px 26px;
+              text-decoration: none;
+      
+              &:hover {
+                background-color: var(--BrandColor);
+                border: 1px solid var(--BrandColor);
+                border-radius: 12px;
+              }
+            }
+          }
+        }
+      
+        li {
+          color: var(--primaryColor);
+          font-size: 14px;
+          list-style: none;
+          cursor: pointer;
+          padding: 11px 26px;
+          text-decoration: none;
+          position: relative;
+      
+          &:hover {
+            background-color: var(--BrandColor);
+            border: 1px solid var(--BrandColor);
+            border-radius: 12px;
+      
+            .subNav {
+              display: block;
+      
+             .CategoriesNav:hover .minorNav {
+                display: block;
+              }
+            }
+          }
+      
+          .subNav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--BorderColor);
+            border: 1px solid var(--BorderColor);
+            border-radius: 12px;
+
+            
+      
+            .minorNav {
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 100%;
+              background-color: var(--BrandColor);
+              border: 1px solid var(--BrandColor);
+              border-radius: 12px;
+            }
+          }
+        }
+      }
+      
+      
+      
+    .Nav-icons{
+        width: 20%;
+        color: var(--primaryColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .Search{
+            width: 100%;
+            input{
+                width: 95%;
+                border: 1px solid var(--BorderColor);
+                border-radius: 10px;
+                padding: 5px 5px ;
+
+            }
+            input[type="text"]:focus {
+                outline: none;
+              }
+        }
+
+        .iconContainer{
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .selected{
+                background-color: var(--BrandColor);
+                border-radius: 0px 0px 0px  0px;
+                color: var(--primaryColor);
+                text-decoration: none;
+                border-radius: 12px;
+
+                li{
+                    color: #F5FEFD;
+                }
+            }
+            .Link{
+                text-decoration: none;
+                li{
+                    color: var(--primaryColor);
+                    font-size: 14px;
+                    list-style: none;
+                    cursor: pointer;
+                    padding: 11px 26px;
+                    text-decoration: none;
+    
+                    &:hover{
+                        background-color: var(--BrandColor);
+                        border: 1px solid var(--BrandColor);
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+
+            .icon{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .notification{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 1rem;
+                height: 1rem;
+                border: var(--BorderColor);
+                border-radius: 50%;
+                background-color: var(--BrandColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p{
+                    padding: 5px;
+                    font-size: 12px;
+                }
+
+            }
+        }
+    }
+
+    .Menu{
+      font-size: 26px;
+        color: var(--primaryColor);
+        margin-right: 5px;
+      display: none;
+
+      @include sm{
+        display: block;
+        
+    }
+    @include md{
+        
+    }
+    @include lg{
+        
+    }
+    @include xl{
+
+    }
+    @include breakpoint(1200px){
+    
+    }
+    }
+   
+}

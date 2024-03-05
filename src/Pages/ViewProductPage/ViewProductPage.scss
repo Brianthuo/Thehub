@@ -1,0 +1,477 @@
+.ViewProductPage{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: var(--primaryColor);
+
+    
+    .Nav{
+        width: 100%;
+        height: 6vh;
+        background-color: var(--BorderColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: fixed;
+        z-index: 100;
+
+        .Logo{
+            color: var(--primaryColor);
+            cursor: pointer;
+        }
+
+        
+        .Ul{
+            width: 40%;
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;  
+                .selected{
+                    background-color: var(--BrandColor);
+                    border-radius: 0px 0px 0px  0px;
+                    color: var(--primaryColor);
+                    text-decoration: none;
+                    border-radius: 12px;
+
+                    li{
+                        color: #F5FEFD;
+                        text-decoration: none;
+                    }
+                }
+                .link{
+                    li{
+                        color: var(--primaryColor);
+                        font-size: 14px;
+                        list-style: none;
+                        cursor: pointer;
+                        padding: 11px 26px;
+                        text-decoration: none;
+        
+                        &:hover{
+                            background-color: var(--BrandColor);
+                            border: 1px solid var(--BrandColor);
+                            border-radius: 12px;
+                        }
+                    }
+                }
+            }
+            li{
+                color: var(--primaryColor);
+                font-size: 14px;
+                list-style: none;
+                cursor: pointer;
+                padding: 11px 26px;
+                text-decoration: none;
+
+                &:hover{
+                    background-color: var(--BrandColor);
+                    border: 1px solid var(--BrandColor);
+                    border-radius: 12px;
+                }
+            }
+        }
+        .Nav-icons{
+            width: 20%;
+            color: var(--primaryColor);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .Search{
+                width: 100%;
+                input{
+                    width: 95%;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 10px;
+                    padding: 5px 5px ;
+
+                }
+                input[type="text"]:focus {
+                    outline: none;
+                  }
+            }
+
+            .iconContainer{
+                width: 3rem;
+                height: 3rem;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon{
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                .notification{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1rem;
+                    height: 1rem;
+                    border: var(--BorderColor);
+                    border-radius: 50%;
+                    background-color: var(--BrandColor);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p{
+                        padding: 5px;
+                        font-size: 12px;
+                    }
+
+                }
+            }
+        }
+    }
+    .ProductsContents{
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image{
+            width: 100%;
+            height: inherit;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 80%;
+                height: 50vh;
+                object-fit: contain;
+                border-radius: 12px;
+            }
+        }
+        .ProductInfo{
+            flex: 1;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 1rem;
+            .ButtonContainer{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .AddtoCart{
+                    padding: 11px 68px;
+                    background-color: var(--BrandColor);
+                    color: var(--primaryColor);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 15px;
+                    font-size: 14px;
+                    font-weight: 800;
+                    cursor: pointer;
+                    transition: .5s;
+                    
+                    &:hover{
+                        background-color: var(--BrandColor);
+                        border: 1px solid var(--BrandColor);
+                        color: var(--primaryColor);
+
+                    }
+                }
+                
+                button{
+                    padding: 11px 68px;
+                    background-color: var(--primaryColor);
+                    color: var(--SecondaryColor);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 15px;
+                    font-size: 14px;
+                    font-weight: 800;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    
+
+                    &:hover{
+                        background-color: var(--BrandColor);
+                        border: 1px solid var(--BrandColor);
+                        color: var(--primaryColor);
+
+                    }
+    
+                }
+            }
+        }
+
+    }
+        //ProductsDisplay
+      //Categories
+      .Products{
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+
+        h1{
+            font-size: 32px;
+            font-weight: 300;
+            margin-top: 1rem;
+            span{
+                font-weight: 800;
+                color: var(--BrandColor);
+            } 
+        }
+
+        .Products-bar{
+            width: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: auto;
+            margin-top: 1rem;
+
+            .Products-container{
+                width: 20rem;
+                min-height: 45vh;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                flex-direction: column;
+                margin: 10px;
+                gap: .5rem;
+                border: 1px solid var(--BorderColor);
+                border-radius: 10px;
+                padding-bottom: 10px;
+                position: relative;
+                
+                img{
+                    width: inherit;
+                    height: 30vh;
+                    object-fit: cover;
+                    border-radius: 10px 10px 0px 0px;
+                }
+                .ProductInfoTab{
+                    width: 90%;
+                    display: flex;
+                    align-items: start;
+                    justify-content: space-between;
+                    padding: 15px 10px;
+                    
+                    .Productinfo{
+                       
+                        h2{
+                            text-align: start;
+                            font-size: 16PX;
+                            font-weight: 500;
+                            text-transform: capitalize;
+                        }
+                        p{
+                            text-align: start;
+                            font-size: 12PX;
+                            font-weight: 500;
+                            text-transform: capitalize; 
+                        }
+                    }
+                    .ProductPrice{
+                        .Discount{
+                            text-align: start;
+                            font-size: 14PX;
+                            font-weight: 500;
+                            text-transform: capitalize;
+                            text-decoration: line-through;
+                            color: var(--BrandColor);
+                        }
+                        h2{
+                            text-align: start;
+                            font-size: 16PX;
+                            font-weight: 800;
+                            text-transform: capitalize;
+                            
+                        }
+                    }
+                }
+               
+                .icon{
+                    position: absolute;
+                    top: .5rem;
+                    right: .7rem;
+                    background-color: var(--primaryColor);
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 50%;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: var(--BrandColor);
+                        color: var(--primaryColor);
+
+                    }
+                }
+                .ButtonContainer{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .AddtoCart{
+                        padding: 11px 28px;
+                        background-color: var(--BrandColor);
+                        color: var(--primaryColor);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid var(--BorderColor);
+                        border-radius: 15px;
+                        font-size: 14px;
+                        font-weight: 800;
+                        cursor: pointer;
+                        transition: .5s;
+                        
+                        &:hover{
+                            background-color: var(--BrandColor);
+                            border: 1px solid var(--BrandColor);
+                            color: var(--primaryColor);
+    
+                        }
+                    }
+                    
+                    button{
+                        padding: 11px 28px;
+                        background-color: var(--primaryColor);
+                        color: var(--SecondaryColor);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid var(--BorderColor);
+                        border-radius: 15px;
+                        font-size: 14px;
+                        font-weight: 800;
+                        cursor: pointer;
+                        transition: .5s;
+
+                        
+    
+                        &:hover{
+                            background-color: var(--BrandColor);
+                            border: 1px solid var(--BrandColor);
+                            color: var(--primaryColor);
+    
+                        }
+        
+                    }
+                }
+
+            }
+        }
+    }
+    .Footer{
+        width: 100%;
+        height: 30vh;
+        background-color: var(--SecondaryColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: var(--primaryColor);
+
+        .FooterContainer{
+            width: 90%;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly; 
+
+            .logo{
+                width: 30%;
+                height: 15vh ;
+                .social-media{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 2em;
+                    
+                    .sIcon{
+                        font-size: 26px;
+                        cursor: pointer;
+                        &:hover{
+                            color: var(--BrandColor);
+                        }
+                    }
+                }
+            }
+            .Sub-menu{
+                width: 30%;
+                height: 15vh;
+                ul{
+                    list-style: none;
+                    li{
+                        font-size: 12px;
+                        cursor: pointer;
+                        &:hover{
+                            color: var(--BrandColor);
+                        }
+                    }
+                }
+
+            }
+            .ContactInfo{
+                width: 30%;
+                height: 15vh;
+                font-size: 14px;
+            }
+            .EmailList{
+                width: 30%;
+                label{
+                    font-size: 16px;
+                }
+                input{
+                    width: 95%;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 10px;
+                    padding: 5px 5px ;
+
+                }
+                input[type="text"]:focus {
+                    outline: none;
+                  }
+                  button{
+                    width: 50%;
+                    padding: 10px;
+                    margin-top: 10px;
+                    background-color: var(--BrandColor);
+                    border-radius: 10px;
+                    border: 1px solid var(--BrandColor);
+                    color: var(--primaryColor);
+                    font-size: 14px;
+                    font-weight: 700;
+                  }
+
+            }
+            
+        }
+       
+    }
+    .subFooter{
+        width: 100%;
+        height: 5vh;
+        background-color: #000;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

@@ -1,0 +1,142 @@
+.CheckoutPage{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primaryColor);
+
+    .CustomerInfo{
+        width: 90%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 10px;
+        h1{
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .PersonalInfo{
+            width: 90%;
+            height: 30%;
+            display: flex;
+            gap: 8px;
+            border: 1px solid var(--BorderColor);
+            padding: 20px;
+            border-radius: 12px;
+            flex-wrap: wrap;
+            h2{
+                font-size: 26px;
+                font-weight: 600;
+            }
+
+            .Datainfo{
+                width: inherit;
+                height: inherit;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-wrap: wrap;
+                flex-direction: column;
+                label{
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin-left: 1rem;
+                }
+                input{
+                    width: 50%;
+                    padding: 10px;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 12px;
+                    font-size: 18PX;
+                }
+            }
+
+        }
+        .PaymentMethod{
+            width: 90%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+            border: 1px solid var(--BorderColor);
+            gap: 1rem;
+            padding: 20px;
+            border-radius: 12px;
+
+            h2{
+                font-size: 26px;
+                font-weight: 600;
+            }
+
+            .mainPaymanetTypes{
+                display: flex;
+                width: 50%;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .paymentInfo{
+                width: 50%;
+                margin: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                input{
+                    width: 50%;
+                    padding: 10px;
+                    border: 1px solid var(--BorderColor);
+                    border-radius: 12px;
+                    font-size: 18PX;
+                }
+            }
+        }
+        .amount{
+            width: 90%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+            border: 1px solid var(--BorderColor);
+            gap: 1rem;
+            padding: 20px;
+            border-radius: 12px;
+
+            h2{
+                font-size: 22px;
+                font-weight: 500;
+            }
+            h1{
+                font-size: 24px;
+                font-weight: 700;
+            }
+            button{
+                padding: 11px 78px;
+                background-color: var(--BrandColor);
+                color: var(--primaryColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid var(--BorderColor);
+                border-radius: 15px;
+                font-size: 22px;
+                font-weight: 800;
+                cursor: pointer;
+                transition: .5s;
+
+                
+
+                &:hover{
+                    background-color: var(--BrandColor);
+                    border: 1px solid var(--BrandColor);
+                    color: var(--primaryColor);
+
+                }
+
+            }
+        }
+    }
+}
