@@ -35,7 +35,7 @@ const Footer = () => {
           <p>Thika Town, Section 9.
           <br />
           Wacera heights building.
-            Shop no. 3
+            Shop no. 3    
             <br />
           whatsapp: 0722121335
           Info@digisofthub.co.ke</p>
