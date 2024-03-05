@@ -8,20 +8,19 @@ import background from '../../images/Background.png'
 import { FiPlus } from "react-icons/fi";
 import { brands } from '../../brands';
 import { FaArrowRight } from "react-icons/fa";
-
-import { useLocation, Link }from 'react-router-dom'
+import { Link }from 'react-router-dom'
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 import Footer from '../../Components/Footer/Footer';
 
   
-
+   
 
 const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
   //UseState
   const [brand, setBrands] = useState([]);
   const [Category, setCategory]= useState('')
   const [displayedBrands, setDisplayedBrands] = useState([]);
-  const location = useLocation();
+  console.log(brand, Category)
 
   //UseEffects
   // Shuffle brands and display only 6 by default
@@ -53,7 +52,7 @@ const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
       return array;
     }
     return shuffle(Data);
-  }, [Data]);
+  }, []);
 
  
 
@@ -145,7 +144,7 @@ const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
                 </div>
               )
             }
-            return null; // Ensure a value is always returned
+      
           })
         }
       </div>

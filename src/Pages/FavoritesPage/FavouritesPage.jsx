@@ -53,7 +53,7 @@ const FavouritesPage = ({Data}) => {
              </div>
              </div>
          )
-         
+           
      })
      }
 

@@ -1,9 +1,6 @@
-import React,{useState, useEffect, useMemo} from 'react'
+import React,{ useMemo} from 'react'
 import './ViewProductPage.scss'
-import { json, useParams} from 'react-router-dom'
-import mac from '../../images/laptops/MacbookAir.jpg'
-import { NavLink, useLocation, Link }from 'react-router-dom'
-import { FiShoppingCart } from "react-icons/fi";
+import { useParams} from 'react-router-dom'
 import { FaRegHeart } from "react-icons/fa";
 import {Data} from '../../Data'
 import { FiPlus } from "react-icons/fi";
@@ -15,12 +12,10 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import Navigationbar from '../../Components/Navigationbar/Navigationbar'
 
 const ViewProductPage = ({AddtoCart}) => {
-  const [cartItems, setCartItems] = useState([]);
     const {id}= useParams()
     console.log(id)
     const product = Data.find(item =>item.id.toString() === id);
     console.log(product)
-    const location = useLocation();
 
     const shuffledData = useMemo(() => {
       function shuffle(array) {
@@ -31,7 +26,7 @@ const ViewProductPage = ({AddtoCart}) => {
         return array;
       }
       return shuffle(Data);
-    }, [Data]);
+    }, []);
 
       if (!product) {
         return <div>Product not found</div>;

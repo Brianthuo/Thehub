@@ -1,29 +1,22 @@
-import React , {useEffect, useState, useMemo} from 'react'
+import React , {useState, useMemo} from 'react'
 import './OffersPage.scss'
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import { Categories } from '../../Categories';
-import { brands } from '../../brands';
 import { Data } from '../../Data';
 import { FiPlus } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
-import { NavLink, useLocation, Link }from 'react-router-dom'
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { json, useParams} from 'react-router-dom'
+import { Link }from 'react-router-dom'
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 import Footer from '../../Components/Footer/Footer';
 import Filter from '../../Components/Filter/Filter';
 
 const OffersPage = () => {  
-    const {id}= useParams()
+
     const [searchItem, setSearchItem] = useState('')
     const [selectedCategory, setSelectedCategory]= useState('')
     const [selectedModel, setSelectedModel]= useState('')
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
+    console.log(selectedModel)
    
   
     const FilteredProducts = useMemo(() => {
@@ -39,7 +32,7 @@ const OffersPage = () => {
           return productNameMatch && categoryMatch && priceMatch;
         });
       }
-    }, [Data, searchItem, selectedCategory, minPrice, maxPrice]);
+    }, [ searchItem, selectedCategory, minPrice, maxPrice]);
   
   console.log(FilteredProducts)
   
@@ -128,7 +121,7 @@ const OffersPage = () => {
 
                 }
                 
-                return null; // Ensure a value is always returned
+      
             })
             }
 

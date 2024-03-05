@@ -1,12 +1,11 @@
-import React , {useEffect, useState} from 'react'
+import React , {useState} from 'react'
 import './Products.scss'
 import { FaRegHeart } from "react-icons/fa";
 import { Data } from '../../Data';
 import { FiPlus } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
-import { NavLink, useLocation, Link }from 'react-router-dom'
+import { Link }from 'react-router-dom'
 import { useMemo } from 'react';
-import { json, useParams} from 'react-router-dom'
 import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 import Footer from '../../Components/Footer/Footer';
 import Filter from '../../Components/Filter/Filter';
@@ -17,11 +16,9 @@ const Products = ({AddtoCart, handleAddToFav, Favourites}) => {
   const [selectedModel, setSelectedModel]= useState('')
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [cartItems, setCartItems] = useState([]);
-  const [products, setProducts] = useState(null); // State to hold the product
+
+  console.log(selectedModel)
  
-  const {id}= useParams()
-  const product = Data.find(item =>item.id.toString() === id);
 
   const FilteredProducts = useMemo(() => {
     if (searchItem === '' && selectedCategory === '' && minPrice === '' && maxPrice === '') {
@@ -36,7 +33,7 @@ const Products = ({AddtoCart, handleAddToFav, Favourites}) => {
         return productNameMatch && categoryMatch && priceMatch;
       });
     }
-  }, [Data, searchItem, selectedCategory, minPrice, maxPrice]);
+  }, [ searchItem, selectedCategory, minPrice, maxPrice]);
 
  console.log(Favourites)
   if (Favourites && Favourites.length > 0) {
@@ -70,7 +67,7 @@ const handleMaxPriceChange = (e) => {
   return (
     <div className='ProductsPage'>
       <Navigationbar/>
-
+  
        {/* ProductsContainer */}
        <div className="ProductsContainer">
         <div className="ProductsSubContainer">
@@ -133,7 +130,7 @@ const handleMaxPriceChange = (e) => {
                     </div>
                 )
                 
-                return null; // Ensure a value is always returned
+      
             })
             }
 
