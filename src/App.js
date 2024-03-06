@@ -20,14 +20,34 @@ function App() {
   const storedFav = JSON.parse(localStorage.getItem('Favourites'));
 
 
+  // useEffect(() => {
+  //   // Retrieve cart data from local storage when the component mounts
+  //   if (Array.isArray(storedData)) {
+  //     setCartItems(storedData);
+  //   }
+  // }, [storedData]);
+
   useEffect(() => {
-    // Retrieve cart data from local storage when the component mounts
     if (Array.isArray(storedData)) {
-      setCartItems(storedData);
+      setCartItems(prevItems => {
+        // Only update cart items if the stored data has changed
+        if (JSON.stringify(prevItems) !== JSON.stringify(storedData)) {
+          return storedData;
+        }
+        return prevItems;
+      });
     }
-  }, [storedData]);
-
-
+  
+    if (Array.isArray(storedFav)) {
+      setFavItems(prevItems => {
+        // Only update favorite items if the stored data has changed
+        if (JSON.stringify(prevItems) !== JSON.stringify(storedFav)) {
+          return storedFav;
+        }
+        return prevItems;
+      });
+    }
+  }, [storedData, storedFav]);
   
   //Storing data in local storage
   const addToCart = (item) => {

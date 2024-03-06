@@ -17,18 +17,28 @@ import Footer from '../../Components/Footer/Footer';
 
 const Homepage = ({AddtoCart, handleAddToFav, Favourites}) => {
   //UseState
-  const [brand, setBrands] = useState([]);
   const [Category, setCategory]= useState('')
   const [displayedBrands, setDisplayedBrands] = useState([]);
-  console.log(brand, Category)
+  console.log( Category)
 
-  //UseEffects
-  // Shuffle brands and display only 6 by default
+const [shuffledBrands, setShuffledBrands] = useState([]);
+
+
+
   useEffect(() => {
-    const shuffledBrands = [...brands].sort(() => Math.random() - 0.5);
-    setBrands(shuffledBrands);
-    setDisplayedBrands(shuffledBrands.slice(0, 8));
+    const shuffleBrands = () => {
+      const shuffled = [...brands].sort(() => Math.random() - 0.5);
+      setShuffledBrands(shuffled);
+      setDisplayedBrands(shuffled.slice(0, 8));
+    };
+  
+    shuffleBrands();
   }, []);
+  
+  // Update displayed brands when 'shuffledBrands' changes
+  useEffect(() => {
+    setDisplayedBrands(shuffledBrands.slice(0, 8));
+  }, [shuffledBrands])
 
   const handleChange = (event) => {
     const selectedCategory = event.target.value;

@@ -5,13 +5,13 @@ import { FaRegHeart } from "react-icons/fa";
 import {  useLocation, Link }from 'react-router-dom'
 import { RiMenu3Fill } from "react-icons/ri"; 
 
-const Navigationbar = () => {
+const Navigationbar = () => { 
 
     const location = useLocation();
     const cart = JSON.parse(localStorage.getItem('cart'));
     const fav = JSON.parse(localStorage.getItem('Favourites'));
-    const itemCount = cart.length;
-    const favCount= fav.length;
+    const itemCount = cart ? (cart.length > 0 ? cart.length : 0) : null;
+    const favCount = fav ? (fav.length > 0 ? fav.length : 0) : null;
   return (
     <div className="Nav">
      <div className="Logo">

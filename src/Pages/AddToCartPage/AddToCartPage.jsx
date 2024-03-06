@@ -28,7 +28,7 @@ const AddToCartPage = ({Data, RemoveFromCart}) => {
  <div className="ProductsSubContainer">
      <div className="ProductsList">
          <h1>Added to Cart</h1>
-         <h3>Total:KES {calculateTotalPrice()} </h3>
+         <h3>Total:KES {calculateTotalPrice} </h3>
          <div className="ProductsCatalog">
              {
                  Data.map((Data)=>{
