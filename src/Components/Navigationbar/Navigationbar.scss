@@ -10,12 +10,12 @@
     z-index: 100;
     position: relative;
 
-    @include sm{
-        display: none;
+    @include sm{ 
         justify-content: space-between;
+       
       }
       @include md{
-        display: none;
+      
 
       }
       @include lg{
@@ -54,7 +54,23 @@
 
     .Ul {
         width: 40%;
-      
+        @include sm{
+         display: none;
+         }
+         @include md{
+           
+   
+         }
+         @include lg{
+             
+         }
+         @include xl{
+   
+         }
+         @include breakpoint(1200px){
+         
+         }
+         
         ul {
           display: flex;
           align-items: center;
@@ -110,6 +126,7 @@
       
              .CategoriesNav:hover .minorNav {
                 display: block;
+
               }
             }
           }
@@ -123,16 +140,22 @@
             border: 1px solid var(--BorderColor);
             border-radius: 12px;
 
+            ul{
+              display: flex;
+              list-style: none;
+            
+            }
             
       
             .minorNav {
               display: none;
               position: absolute;
               top: 0;
-              left: 100%;
-              background-color: var(--BrandColor);
+              left: calc(100% + 10px);
+              background-color: blue;
               border: 1px solid var(--BrandColor);
               border-radius: 12px;
+              width: 20rem;
             }
           }
         }
@@ -146,6 +169,24 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+
+        @include sm{
+         display: none;
+         }
+         @include md{
+           
+   
+         }
+         @include lg{
+             
+         }
+         @include xl{
+   
+         }
+         @include breakpoint(1200px){
+         
+         }
+         
 
         .Search{
             width: 100%;
@@ -227,8 +268,8 @@
 
     .Menu{
       font-size: 26px;
-        color: var(--primaryColor);
-        margin-right: 5px;
+      color: var(--primaryColor);
+      margin-right: 5px;
       display: none;
 
       @include sm{
@@ -247,6 +288,100 @@
     @include breakpoint(1200px){
     
     }
+    }
+
+    .Ulopen{
+      position: absolute;
+      top: 3.2rem;
+      background-color: var(--BorderColor);
+      width: 100%;
+      min-height: 50vh;
+      transition: top 0.3s ease-in-out;
+      
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        .selected {
+          background-color: var(--BrandColor);
+          border-radius: 12px;
+          color: var(--primaryColor);
+          text-decoration: none;
+    
+          li {
+            color: #f5fefd;
+          }
+        }
+    
+        .Link {
+          text-decoration: none;
+    
+          li {
+            color: var(--primaryColor);
+            font-size: 14px;
+            list-style: none;
+            cursor: pointer;
+            padding: 11px 26px;
+            text-decoration: none;
+    
+            &:hover {
+              background-color: var(--BrandColor);
+              border: 1px solid var(--BrandColor);
+              border-radius: 12px;
+            }
+          }
+        }
+      }
+      li {
+        color: var(--primaryColor);
+        font-size: 14px;
+        list-style: none;
+        cursor: pointer;
+        padding: 11px 26px;
+        text-decoration: none;
+        position: relative;
+    
+        &:hover {
+          background-color: var(--BrandColor);
+          border: 1px solid var(--BrandColor);
+          border-radius: 12px;
+    
+          .subNav {
+            display: block;
+    
+           .CategoriesNav:hover .minorNav {
+              display: block;
+
+            }
+          }
+        }
+    
+        .subNav {
+          display: none;
+
+          ul{
+            display: flex;
+            list-style: none;
+          
+          }
+          
+    
+          .minorNav {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: calc(100% + 10px);
+            background-color: blue;
+            border: 1px solid var(--BrandColor);
+            border-radius: 12px;
+            width: 20rem;
+          }
+        }
+    
+      }
+
     }
    
 }
