@@ -11,7 +11,7 @@
         background-color: var(--BorderColor);
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         position: fixed;
         z-index: 100;
     }
@@ -179,107 +179,4 @@
         }
     }
 
-    .Footer {
-        width: 100%;
-        height: 30vh;
-        background-color: var(--SecondaryColor);
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        color: var(--primaryColor);
-
-        .FooterContainer {
-            width: 90%;
-            height: 20vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-
-            .logo {
-                width: 30%;
-                height: 15vh;
-
-                .social-media {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    gap: 2em;
-
-                    .sIcon {
-                        font-size: 26px;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: var(--BrandColor);
-                        }
-                    }
-                }
-            }
-
-            .Sub-menu {
-                width: 30%;
-                height: 15vh;
-
-                ul {
-                    list-style: none;
-
-                    li {
-                        font-size: 12px;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: var(--BrandColor);
-                        }
-                    }
-                }
-            }
-
-            .ContactInfo {
-                width: 30%;
-                height: 15vh;
-                font-size: 14px;
-            }
-
-            .EmailList {
-                width: 30%;
-
-                label {
-                    font-size: 16px;
-                }
-
-                input {
-                    width: 95%;
-                    border: 1px solid var(--BorderColor);
-                    border-radius: 10px;
-                    padding: 5px 5px;
-                }
-
-                input[type="text"]:focus {
-                    outline: none;
-                }
-
-                button {
-                    width: 50%;
-                    padding: 10px;
-                    margin-top: 10px;
-                    background-color: var(--BrandColor);
-                    border-radius: 10px;
-                    border: 1px solid var(--BrandColor);
-                    color: var(--primaryColor);
-                    font-size: 14px;
-                    font-weight: 700;
-                }
-            }
-        }
-    }
-
-    .subFooter {
-        width: 100%;
-        height: 5vh;
-        background-color: #000;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 }

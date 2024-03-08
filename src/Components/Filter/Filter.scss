@@ -1,3 +1,4 @@
+@import '../../Breakpoints.scss';
 .FiltersContainer{
     width: 100%;
     .filterCategories{
@@ -12,19 +13,36 @@
             font-size: 22px;
             font-weight: 700;
             text-align: start;
+            @include sm{
+                margin-top: 0;
+            }
+            @include md{
+         
+      
+            }
+            @include lg{
+                
+            }
+            @include xl{
+      
+            }
+            @include breakpoint(1200px){
+            
+            }
         }
+        
     
     
         .search{
             width: 90%;
             border: 1px solid var(--BorderColor);
-    
-                border-radius: 10px;
-                padding: 5px 5px ;
+            border-radius: 10px;
+            padding: 5px 5px ;
     
                 input[type="text"]:focus {
                     outline: none;
                   }
+                  
            
         }
         select{
